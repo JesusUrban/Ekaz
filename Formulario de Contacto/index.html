@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EKAZ IDIOMAS</title>
+  <link rel="shortcut icon" href="Archivos/a.ico">
+  
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <script src="js/jquery-3.2.1.js"></script>
+      <script src="js/script.js"></script>
+</head>
+<body>
+
+    <section class="form_wrap">
+
+        <section class="cantact_info">
+            <section class="info_title">
+              <center><img src="Archivos/jesu.png"></center> 
+                <h2>INFORMATION
+CONTACT</h2>
+            </section>
+            <section class="info_items">
+                <p><span class="fa fa-envelope"></span> epmatute@gmail.com</p>
+                <p><span class="fa fa-mobile"></span> +593 99 231 7555</p>
+            </section>
+        </section>
+
+
+
+     
+
+        <form id="form"class="form_contact">
+  <div class="field">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required>
+  </div>
+  <div class="field">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+  </div>
+  <div class="field">
+    <label for="phone">Phone / Cell phone</label>
+    <input type="number" name="phone" id="phone" required>
+  </div>
+  <div class="field">
+    <label for="message">Message</label>
+    <input type="text" name="message" id="message" required>
+  </div>
+
+  <input type="submit" id="button" value="Send Email" style="
+
+    background: #4091EC;
+    
+
+    align-self: flex-end;
+
+    color: #fff;
+    font-family: 'Open sans';
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;">
+</form>
+
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('t0OFKKfG0-JLYZSPm')
+</script>
+    </section>
+
+    <script type="text/javascript">
+ 
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_05p51j6';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Message Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+    document.getElementById('name').value = "";
+    document.getElementById('email').value = "";
+    document.getElementById('phone').value = "";
+    document.getElementById('message').value = "";
+});
+
+
+
+    </script>
+
+</body>
+</html>
