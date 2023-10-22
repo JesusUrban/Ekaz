@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EKAZ IDIOMAS</title>
+    <link rel="shortcut icon" href="Archivos/a.ico">
+</head>
+<style type="text/css">
+	
+	
+.one{
+	width: 270px;
+	height:160px;
+	border-radius: 10px;
+	box-shadow: 20px 11px 21px 1px rgba(0,0,0,0.7);
+-webkit-box-shadow: 20px 11px 21px 1px rgba(0,0,0,0.7);
+-moz-box-shadow: 20px 11px 21px 1px rgba(0,0,0,0.7);
+margin-right:20px;
+margin-top: 10px;
+
+}
+
+
+
+
+
+/*the poup window */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #333;
+    width: 60%;
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*make hover the element*/
+.hover1 {
+  position: relative;
+  display: inline-block;
+}
+
+.hover1::before {
+  content: "Share";
+  position: absolute;
+  top: 75%; /* Position it below the element */
+  left: 35%;
+	font-size: 30px;
+	font-weight: bold;
+  opacity: 0; /* Initially make it invisible */
+  transition: opacity 0.3s; /* Add a smooth transition */
+}
+
+.hover1:hover::before {
+  opacity: 1; /* Make it visible on hover */
+}
+/*Hover2*/
+
+.hover2 {
+  position: relative;
+  display: inline-block;
+}
+
+.hover2::before {
+  content: "Play";
+  position: absolute;
+  top: 75%; /* Position it below the element */
+  left: 36%;
+	font-size: 30px;
+	font-weight: bold;
+  opacity: 0; /* Initially make it invisible */
+  transition: opacity 0.3s; /* Add a smooth transition */
+}
+
+.hover2:hover::before {
+  opacity: 1; /* Make it visible on hover */
+}
+
+
+
+
+
+</style>
+<body>
+	<button id="popupButton">Click me for a pop-up</button>
+
+	<!-- The hidden pop-up div -->
+	<div id="popup" class="popup">
+			<div class="popup-content">
+					<span class="close-button" id="closeButton">&times;</span>
+					<a  ><img src="Archivos/sharing.png"class="one"> </a>
+					<h2>Share : Compartir</h2>
+					<p>This is a pop-up window.</p>
+			</div>
+	</div>
+
+
+
+
+
+
+
+	
+	<center>
+<div class="gallery">
+	
+ <div class="hover1"style="position: relative;" ><img src="Archivos/sharing.png"class="one" > <img id="buttonImage" src="Archivos/Audio.png" alt="Button Image" style="width: 40px;height: 40px; margin-left: -63px;margin-top: 13px; position: absolute;"></div>
+	<a class="hover2"><img src="Archivos/playingCards.png"class="one"> </a>
+
+
+
+</div>
+</center>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+    const popupButton = document.getElementById('popupButton');
+    const popup = document.getElementById('popup');
+    const closeButton = document.getElementById('closeButton');
+
+    popupButton.addEventListener('click', function() {
+        popup.style.display = 'block';
+    });
+
+    closeButton.addEventListener('click', function() {
+        popup.style.display = 'none';
+    });
+});
+</script>
+</body>
+</html>

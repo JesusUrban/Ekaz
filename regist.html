@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>EKAZ IDIOMAS</title>
+    <link rel="shortcut icon" href="Archivos/a.ico">
+	    <link rel="stylesheet" type="text/css" href="regist.css">
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+	<title></title>
+</head>
+<body>
+
+
+
+	<form id="formul" class="formulario" >
+		<h1>Register</h1>
+		<div class="contenedor">
+		 <div class="input-contenedor">
+			<i class="fas fa-user"></i>
+			<input type="text" placeholder="Full Name" id="one">
+		 </div>
+		 	 <div class="input-contenedor">
+			<i class="fas fa-envelope icon"></i>
+			<input type="email" placeholder="E-mail" id = "two">
+		 </div>
+		 	 <div class="input-contenedor">
+		<i class="fas fa-address-book"></i>
+			<select id="three">
+				<option>English A1</option>
+				<option>English A2</option>
+				<option>English B1</option>
+				<option>English B2</option>
+				<option>Basic Chinese</option>
+				<option>Basic French</option>
+			
+
+
+			</select>
+		 </div>
+		 <div class="input-contenedor">
+	<i class="far fa-clock"></i>
+			<select id="four" >
+				<option>8:00 AM / 9:30 AM</option>
+				<option>10:00 AM / 11:30 AM</option>
+				<option>4:30 PM / 6:00 PM</option>
+				<option>6:00 PM / 7:00 PM</option>
+				
+			</select>
+		 </div>
+		 <div class="input-contenedor">
+			<i class="fas fa-phone"></i>
+			<input type="text" placeholder="Phone Number"id="five">
+
+		 </div>
+		 	<input type="button" class="k" id="btn" value=""style="width: 20px; background-color: transparent;">
+		
+          
+             
+
+           <a href="https://wa.me/+593992317555?text=Hola,%20necesito%20Informacion" target="_blank"> <p>Have a conversation on WhatsApp </p><img src="Archivos/whatsApp.png"></a>
+		</div>
+
+	</form>
+
+
+
+
+
+	
+<form id="form" class="formulario" style="margin-top: -120px; background-color: transparent;">
+	<center><input type="submit" class="dann" id="buttt" value="Send Email"></center>
+  <div class="field" >
+    <label for="name"style="margin-top: 50px;">name</label>
+    <input type="text" name="name" id="name"style="background-color: transparent;color: transparent;" >
+  </div>
+  <div class="field">
+    
+    <input type="text" name="email" id="email"style="background-color: transparent;">
+  </div>
+  <div class="field">
+    
+    <input type="text" name="course" id="course"style="background-color: transparent;">
+  </div>
+  <div class="field">
+    
+    <input type="text" name="schedule" id="schedule"style="background-color: transparent;">
+  </div>
+  <div class="field">
+   
+    <input type="text" name="phone" id="phone"style="background-color: transparent;">
+  </div>
+
+  
+</form>
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('t0OFKKfG0-JLYZSPm')
+</script>
+        
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	
+	function jes() {
+		const textbox1 = document.getElementById('one');
+const textbox2 = document.getElementById('two');
+const textbox3 = document.getElementById('three');
+const textbox4 = document.getElementById('four');
+const textbox5 = document.getElementById('five');
+
+
+   const aa1 = textbox1.value; 
+	const aa2 = textbox2.value; 
+	const aa3 = textbox3.value; 
+	const aa4 = textbox4.value; 
+	const aa5 = textbox5.value; 
+	 
+ 
+document.getElementById('name').value = aa1;
+document.getElementById('email').value = aa2;
+document.getElementById('course').value = aa3;
+document.getElementById('schedule').value = aa4;
+document.getElementById('phone').value = aa5;
+	}
+
+
+
+const	button = document.getElementById('buttt');
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   button.value = 'Sending...';
+   jes();
+
+   const serviceID = 'default_service';
+   const templateID = 'template_f2tnkrq';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      button.value = 'Send Email';
+      alert('Message Sent!');
+    }, (err) => {
+      button.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+ 
+document.getElementById('one').value = "";
+document.getElementById('two').value = "";
+document.getElementById('five').value = "";
+});
+
+
+
+
+
+</script>
+</body>
+</html>
